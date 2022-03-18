@@ -1,0 +1,603 @@
+---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 3/17/22 10:35 PM
+Description: Watching Server
+
+java.lang.Error: ServerHangWatchdog detected that a single server tick took 60.00 seconds (should be max 0.05)
+	at java.util.function.Predicate.lambda$and$0(Predicate.java:69) ~[?:1.8.0_311] {}
+	at java.util.function.Predicate$$Lambda$485/948692477.test(Unknown Source) ~[?:?] {}
+	at net.minecraft.world.chunk.Chunk.func_177414_a(Chunk.java:481) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.world.World.func_175674_a(World.java:727) ~[?:?] {re:mixin,pl:accesstransformer:B,xf:fml:advancedrocketry:coremodmethod,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,xf:fml:advancedrocketry:coremodmethod,pl:mixin:APP:kubejs-common.mixins.json:LevelMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.world.IEntityReader.func_230318_c_(SourceFile:66) ~[?:?] {re:mixin,re:classloading}
+	at net.minecraft.world.IBiomeReader.func_230318_c_(SourceFile:22) ~[?:?] {re:mixin,re:classloading}
+	at net.minecraft.world.ICollisionReader.func_234867_d_(SourceFile:58) ~[?:?] {re:classloading,re:mixin}
+	at net.minecraft.world.ICollisionReader.func_234865_b_(SourceFile:50) ~[?:?] {re:classloading,re:mixin}
+	at net.minecraft.world.ICollisionReader.func_226669_j_(SourceFile:42) ~[?:?] {re:classloading,re:mixin}
+	at net.minecraft.entity.item.ItemEntity.func_70071_h_(ItemEntity.java:107) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.world.server.ServerWorld.func_217479_a(ServerWorld.java:611) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architects_palette.mixins.json:ServerWorldMixin,pl:mixin:APP:abnormals_core.mixins.json:ServerWorldMixin,pl:mixin:APP:endergetic.mixins.json:ServerWorldMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.world.server.ServerWorld$$Lambda$19423/14832773.accept(Unknown Source) ~[?:?] {}
+	at net.minecraft.world.World.func_217390_a(World.java:554) ~[?:?] {re:mixin,pl:accesstransformer:B,xf:fml:advancedrocketry:coremodmethod,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,xf:fml:advancedrocketry:coremodmethod,pl:mixin:APP:kubejs-common.mixins.json:LevelMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.world.server.ServerWorld.func_72835_b(ServerWorld.java:404) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architects_palette.mixins.json:ServerWorldMixin,pl:mixin:APP:abnormals_core.mixins.json:ServerWorldMixin,pl:mixin:APP:endergetic.mixins.json:ServerWorldMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:851) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftServerMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:291) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:787) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftServerMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:642) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftServerMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_240783_a_(MinecraftServer.java:232) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftServerMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer$$Lambda$18800/480139819.run(Unknown Source) ~[?:?] {}
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_311] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at java.util.function.Predicate.lambda$and$0(Predicate.java:69) ~[?:1.8.0_311] {}
+	at java.util.function.Predicate$$Lambda$485/948692477.test(Unknown Source) ~[?:?] {}
+	at net.minecraft.world.chunk.Chunk.func_177414_a(Chunk.java:481) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.world.World.func_175674_a(World.java:727) ~[?:?] {re:mixin,pl:accesstransformer:B,xf:fml:advancedrocketry:coremodmethod,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,xf:fml:advancedrocketry:coremodmethod,pl:mixin:APP:kubejs-common.mixins.json:LevelMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.world.IEntityReader.func_230318_c_(SourceFile:66) ~[?:?] {re:mixin,re:classloading}
+	at net.minecraft.world.IBiomeReader.func_230318_c_(SourceFile:22) ~[?:?] {re:mixin,re:classloading}
+	at net.minecraft.world.ICollisionReader.func_234867_d_(SourceFile:58) ~[?:?] {re:classloading,re:mixin}
+	at net.minecraft.world.ICollisionReader.func_234865_b_(SourceFile:50) ~[?:?] {re:classloading,re:mixin}
+	at net.minecraft.world.ICollisionReader.func_226669_j_(SourceFile:42) ~[?:?] {re:classloading,re:mixin}
+	at net.minecraft.entity.item.ItemEntity.func_70071_h_(ItemEntity.java:107) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.world.server.ServerWorld.func_217479_a(ServerWorld.java:611) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architects_palette.mixins.json:ServerWorldMixin,pl:mixin:APP:abnormals_core.mixins.json:ServerWorldMixin,pl:mixin:APP:endergetic.mixins.json:ServerWorldMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.world.server.ServerWorld$$Lambda$19423/14832773.accept(Unknown Source) ~[?:?] {}
+	at net.minecraft.world.World.func_217390_a(World.java:554) ~[?:?] {re:mixin,pl:accesstransformer:B,xf:fml:advancedrocketry:coremodmethod,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,xf:fml:advancedrocketry:coremodmethod,pl:mixin:APP:kubejs-common.mixins.json:LevelMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.world.server.ServerWorld.func_72835_b(ServerWorld.java:404) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architects_palette.mixins.json:ServerWorldMixin,pl:mixin:APP:abnormals_core.mixins.json:ServerWorldMixin,pl:mixin:APP:endergetic.mixins.json:ServerWorldMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:851) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftServerMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:291) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:787) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftServerMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:642) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftServerMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_240783_a_(MinecraftServer.java:232) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:kubejs-common.mixins.json:MinecraftServerMixin,pl:mixin:A,pl:runtimedistcleaner:A}
+-- Thread Dump --
+Details:
+	Threads: "Netty Server IO #2" Id=428 RUNNABLE
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(WindowsSelectorImpl.java:296)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(WindowsSelectorImpl.java:278)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(WindowsSelectorImpl.java:159)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@61af57ab
+	-  locked java.util.Collections$UnmodifiableSet@6f68b5ee
+	-  locked sun.nio.ch.WindowsSelectorImpl@6b573cdb
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:756)
+	...
+
+
+"Netty Server IO #1" Id=426 RUNNABLE
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(WindowsSelectorImpl.java:296)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(WindowsSelectorImpl.java:278)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(WindowsSelectorImpl.java:159)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@2e55bfd5
+	-  locked java.util.Collections$UnmodifiableSet@35dca7bb
+	-  locked sun.nio.ch.WindowsSelectorImpl@1f31b32b
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:756)
+	...
+
+
+"Java2D Disposer" Id=422 WAITING on java.lang.ref.ReferenceQueue$Lock@4d52f5f2
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@4d52f5f2
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at sun.java2d.Disposer.run(Disposer.java:148)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Server Watchdog" Id=421 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:454)
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:41)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"ComputerCraft-Network-3" Id=419 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4e7a409a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4e7a409a
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"ComputerCraft-Network-2" Id=418 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4e7a409a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4e7a409a
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"ComputerCraft-Network-1" Id=416 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4e7a409a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4e7a409a
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"ComputerCraft-Network-0" Id=413 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4e7a409a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4e7a409a
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Thread-353" Id=412 RUNNABLE (in native)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus0(Native Method)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus(WindowsNativeDispatcher.java:1007)
+	at sun.nio.fs.WindowsWatchService$Poller.run(WindowsWatchService.java:586)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Netty Server IO #0" Id=411 RUNNABLE
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(WindowsSelectorImpl.java:296)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(WindowsSelectorImpl.java:278)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(WindowsSelectorImpl.java:159)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@1ecbc791
+	-  locked java.util.Collections$UnmodifiableSet@c719788
+	-  locked sun.nio.ch.WindowsSelectorImpl@56561e91
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:756)
+	...
+
+
+"ObjectCleanerThread" Id=410 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@4a34fa51
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@4a34fa51
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at io.netty.util.internal.ObjectCleaner$1.run(ObjectCleaner.java:54)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Server console handler" Id=409 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	-  locked java.io.BufferedInputStream@a034bc9
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	-  locked java.io.InputStreamReader@ace40d6
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	...
+
+
+"DestroyJavaVM" Id=408 RUNNABLE
+
+
+"Server thread" Id=405 RUNNABLE
+	at java.util.function.Predicate.lambda$and$0(Predicate.java:69)
+	at java.util.function.Predicate$$Lambda$485/948692477.test(Unknown Source)
+	at net.minecraft.world.chunk.Chunk.func_177414_a(Chunk.java:481)
+	at net.minecraft.world.World.func_175674_a(World.java:727)
+	at net.minecraft.world.IEntityReader.func_230318_c_(SourceFile:66)
+	at net.minecraft.world.IBiomeReader.func_230318_c_(SourceFile:22)
+	at net.minecraft.world.ICollisionReader.func_234867_d_(SourceFile:58)
+	at net.minecraft.world.ICollisionReader.func_234865_b_(SourceFile:50)
+	...
+
+
+"Snooper Timer" Id=406 WAITING on java.util.TaskQueue@6c8a6588
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@6c8a6588
+	at java.lang.Object.wait(Object.java:502)
+	at java.util.TimerThread.mainLoop(Timer.java:526)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"IO-Worker-152" Id=215 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@181fc3a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@181fc3a
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"IO-Worker-63" Id=126 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@181fc3a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@181fc3a
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"spark-forge-async-worker" Id=67 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@114cb2c0
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@114cb2c0
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"spark-cpu-monitor" Id=66 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@697c88cf
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@697c88cf
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Thread-15" Id=41 RUNNABLE (in native)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus0(Native Method)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus(WindowsNativeDispatcher.java:1007)
+	at sun.nio.fs.WindowsWatchService$Poller.run(WindowsWatchService.java:586)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Thread-14" Id=40 RUNNABLE (in native)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus0(Native Method)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus(WindowsNativeDispatcher.java:1007)
+	at sun.nio.fs.WindowsWatchService$Poller.run(WindowsWatchService.java:586)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Thread-13" Id=39 RUNNABLE (in native)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus0(Native Method)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus(WindowsNativeDispatcher.java:1007)
+	at sun.nio.fs.WindowsWatchService$Poller.run(WindowsWatchService.java:586)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Thread-12" Id=38 RUNNABLE (in native)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus0(Native Method)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus(WindowsNativeDispatcher.java:1007)
+	at sun.nio.fs.WindowsWatchService$Poller.run(WindowsWatchService.java:586)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Thread-11" Id=37 RUNNABLE (in native)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus0(Native Method)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus(WindowsNativeDispatcher.java:1007)
+	at sun.nio.fs.WindowsWatchService$Poller.run(WindowsWatchService.java:586)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Thread-10" Id=36 RUNNABLE (in native)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus0(Native Method)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus(WindowsNativeDispatcher.java:1007)
+	at sun.nio.fs.WindowsWatchService$Poller.run(WindowsWatchService.java:586)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Thread-7" Id=31 RUNNABLE (in native)
+	at sun.nio.ch.Iocp.getQueuedCompletionStatus(Native Method)
+	at sun.nio.ch.Iocp.access$300(Iocp.java:46)
+	at sun.nio.ch.Iocp$EventHandlerTask.run(Iocp.java:333)
+	at sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.ThreadPoolExecutor$Worker@1f32625
+
+
+"Thread-6" Id=30 RUNNABLE (in native)
+	at sun.nio.ch.Iocp.getQueuedCompletionStatus(Native Method)
+	at sun.nio.ch.Iocp.access$300(Iocp.java:46)
+	at sun.nio.ch.Iocp$EventHandlerTask.run(Iocp.java:333)
+	at sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.ThreadPoolExecutor$Worker@67e6c7ad
+
+
+"Thread-5" Id=29 RUNNABLE (in native)
+	at sun.nio.ch.Iocp.getQueuedCompletionStatus(Native Method)
+	at sun.nio.ch.Iocp.access$300(Iocp.java:46)
+	at sun.nio.ch.Iocp$EventHandlerTask.run(Iocp.java:333)
+	at sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.ThreadPoolExecutor$Worker@a7aad1a
+
+
+"Thread-4" Id=28 RUNNABLE (in native)
+	at sun.nio.ch.Iocp.getQueuedCompletionStatus(Native Method)
+	at sun.nio.ch.Iocp.access$300(Iocp.java:46)
+	at sun.nio.ch.Iocp$EventHandlerTask.run(Iocp.java:333)
+	at sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.ThreadPoolExecutor$Worker@60f345f2
+
+
+"Thread-3" Id=27 RUNNABLE (in native)
+	at sun.nio.ch.Iocp.getQueuedCompletionStatus(Native Method)
+	at sun.nio.ch.Iocp.access$300(Iocp.java:46)
+	at sun.nio.ch.Iocp$EventHandlerTask.run(Iocp.java:333)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Timer hack thread" Id=22 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.util.Util$6.run(Util.java:505)
+
+
+"Thread-2" Id=17 RUNNABLE (in native)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus0(Native Method)
+	at sun.nio.fs.WindowsNativeDispatcher.GetQueuedCompletionStatus(WindowsNativeDispatcher.java:1007)
+	at sun.nio.fs.WindowsWatchService$Poller.run(WindowsWatchService.java:586)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Thread-1" Id=16 TIMED_WAITING
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:338)
+	at com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread.run(FileWatcher.java:190)
+
+
+"Attach Listener" Id=5 RUNNABLE
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@56e5164d
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@56e5164d
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@580b4087
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@580b4087
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+
+
+Stacktrace:
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:56) [?:?] {re:classloading}
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_311] {}
+
+
+-- Performance stats --
+Details:
+	Random tick rate: 3
+	Level stats: ResourceKey[minecraft:dimension / minecraft:overworld]: players: 1, entities: 45023 [minecraft:item:44531,minecraft:chicken:59,minecraft:pig:42,minecraft:sheep:35,minecraft:cow:32], block_entities: 2518 [create:belt:607,create:simple_kinetic:480,prettypipes:pipe:283,minecraft:chest:148,create:gearbox:130], block_ticks: 1, fluid_ticks: 0, chunk_source: ServerChunkCache: 2357,
+ResourceKey[minecraft:dimension / minecraft:the_nether]: players: 0, entities: 52 [minecraft:item:43,minecraft:piglin:4,minecraft:strider:2,create:stationary_contraption:2,lootr:lootr_minecart:1], block_entities: 116 [create:simple_kinetic:30,create:belt:19,create:fluid_pipe:16,create:encased_shaft:11,create:gearbox:7], block_ticks: 0, fluid_ticks: 0, chunk_source: ServerChunkCache: 784,
+ResourceKey[minecraft:dimension / minecraft:the_end]: players: 0, entities: 0 [], block_entities: 0 [], block_ticks: 0, fluid_ticks: 0, chunk_source: ServerChunkCache: 0,
+ResourceKey[minecraft:dimension / advancedrocketry:space]: players: 0, entities: 0 [], block_entities: 0 [], block_ticks: 0, fluid_ticks: 0, chunk_source: ServerChunkCache: 0,
+ResourceKey[minecraft:dimension / custommoon:moon]: players: 0, entities: 0 [], block_entities: 0 [], block_ticks: 0, fluid_ticks: 0, chunk_source: ServerChunkCache: 0
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_311, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 5593473096 bytes (5334 MB) / 8372355072 bytes (7984 MB) up to 8372355072 bytes (7984 MB)
+	CPUs: 4
+	JVM Flags: 2 total; -Xmx8G -Xms8G
+	ModLauncher: 8.0.9+86+master.3cf110c
+	ModLauncher launch target: fmlserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		/mixin-0.8.4.jar mixin PLUGINSERVICE 
+		/eventbus-4.0.0.jar eventbus PLUGINSERVICE 
+		/forge-1.16.5-36.2.20.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.2.20.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-3.0.1.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.5-36.2.20.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.2.20.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.4.jar mixin TRANSFORMATIONSERVICE 
+		/forge-1.16.5-36.2.20.jar fml TRANSFORMATIONSERVICE 
+	FML: 36.2
+	Forge: net.minecraftforge:36.2.20
+	FML Language Providers: 
+		javafml@36.2
+		minecraft@1
+		scorge@3.1.3
+	Mod List: 
+		enchantedbookredesign-3.3-1.16.4.jar              |Enchanted Book Redesign       |enchantedbookredesign         |3.3-1.16.4          |DONE      |Manifest: NOSIGNATURE
+		grapplemod-1.16.5-v12.jar                         |Grappling Hook Mod            |grapplemod                    |1.16.5-v12          |DONE      |Manifest: NOSIGNATURE
+		Architects-Palette-1.16.4-1.1.4.jar               |Architect's Palette           |architects_palette            |1.1.2               |DONE      |Manifest: NOSIGNATURE
+		connectivity-2.4-1.16.5.jar                       |Connectivity Mod              |connectivity                  |2.4-1.16.5          |DONE      |Manifest: NOSIGNATURE
+		strawgolem-1.16-1.9.jar                           |Straw Golem                   |strawgolem                    |1.16-1.9            |DONE      |Manifest: NOSIGNATURE
+		CTM-MC1.16.1-1.1.2.6.jar                          |ConnectedTexturesMod          |ctm                           |MC1.16.1-1.1.2.6    |DONE      |Manifest: NOSIGNATURE
+		Controlling-7.0.0.28.jar                          |Controlling                   |controlling                   |7.0.0.28            |DONE      |Manifest: NOSIGNATURE
+		structurescompass-1.16.5-1.2.0.jar                |Structures Compass            |structurescompass             |1.16.5-1.2.0        |DONE      |Manifest: NOSIGNATURE
+		Placebo-1.16.5-4.6.0.jar                          |Placebo                       |placebo                       |4.6.0               |DONE      |Manifest: NOSIGNATURE
+		mightyarchitect-mc1.16.3_v0.5.jar                 |The Mighty Architect          |mightyarchitect               |0.5                 |DONE      |Manifest: NOSIGNATURE
+		moreminecarts-1.3.12.jar                          |More Minecarts                |moreminecarts                 |1.3.12              |DONE      |Manifest: NOSIGNATURE
+		culinaryconstruct-forge-1.16.5-4.0.0.6.jar        |Culinary Construct            |culinaryconstruct             |1.16.5-4.0.0.6      |DONE      |Manifest: NOSIGNATURE
+		ImprovedBackpacks-1.6.2.0.jar                     |Improved Backpacks            |improvedbackpacks             |1.6.2.0             |DONE      |Manifest: NOSIGNATURE
+		reliquary-1.16.5-1.3.5.1100.jar                   |Reliquary                     |xreliquary                    |1.16.5-1.3.5.1100   |DONE      |Manifest: NOSIGNATURE
+		Morpheus-1.16.5-4.2.70.jar                        |Morpheus                      |morpheus                      |4.2.70              |DONE      |Manifest: NOSIGNATURE
+		worldshape-1.0.jar                                |Worldshape                    |worldshape                    |1.0                 |DONE      |Manifest: NOSIGNATURE
+		WaterStrainer-1.16.3-10.0.0.jar                   |Water Strainer                |waterstrainer                 |1.16.3-10.0.0       |DONE      |Manifest: NOSIGNATURE
+		supplementaries-1.16.5-0.17.12b.jar               |Supplementaries               |supplementaries               |0.17.12             |DONE      |Manifest: NOSIGNATURE
+		cobblegenrandomizer-1.16-5.1.2.jar                |CobbleGenRandomizer           |cobblegenrandomizer           |1.16-5.1.2          |DONE      |Manifest: NOSIGNATURE
+		Buddycards-1.16.5-2.5.2.jar                       |Buddycards                    |buddycards                    |1.16.5-2.5.2        |DONE      |Manifest: NOSIGNATURE
+		PathToDirt-1.2.0-mc1.16.x.jar                     |Path To Dirt                  |pathtodirt                    |1.2.0               |DONE      |Manifest: NOSIGNATURE
+		PrettyPipes-1.9.5.jar                             |Pretty Pipes                  |prettypipes                   |1.9.5               |DONE      |Manifest: NOSIGNATURE
+		corpse-1.16.5-1.0.6.jar                           |Corpse                        |corpse                        |1.16.5-1.0.6        |DONE      |Manifest: NOSIGNATURE
+		OreTweaker-1.16.5-2.6.0.jar                       |Ore Tweaker                   |oretweaker                    |2.6.0               |DONE      |Manifest: NOSIGNATURE
+		FarmersDelight-1.16.5-0.5.3.jar                   |Farmer's Delight              |farmersdelight                |1.16.5-0.5.3        |DONE      |Manifest: NOSIGNATURE
+		torchmaster-2.3.8.jar                             |Torchmaster                   |torchmaster                   |2.3.8               |DONE      |Manifest: NOSIGNATURE
+		repurposed_structures_forge-3.4.4+1.16.5.jar      |Repurposed Structures         |repurposed_structures         |3.4.4+1.16.5        |DONE      |Manifest: NOSIGNATURE
+		crashutilities-3.12.jar                           |Crash Utilities               |crashutilities                |3.12                |DONE      |Manifest: NOSIGNATURE
+		fastfurnaceminusreplacement-1.1-1.16.3.jar        |Fast Furnace Minus Replacement|fastfurnaceminusreplacement   |1.1-1.16.3          |DONE      |Manifest: NOSIGNATURE
+		BiomesOPlenty-1.16.5-13.1.0.482-universal.jar     |Biomes O' Plenty              |biomesoplenty                 |1.16.5-13.1.0.482   |DONE      |Manifest: NOSIGNATURE
+		AdvancedRocketry-1.16.5-2.0.0-12-universal.jar    |Advanced Rocketry             |advancedrocketry              |1.16.5-2.0.0-12     |DONE      |Manifest: NOSIGNATURE
+		extcaves-2.4.jar                                  |Extended Caves                |extcaves                      |2.4                 |DONE      |Manifest: NOSIGNATURE
+		fairylights-4.0.5-1.16.5.jar                      |Fairy Lights                  |fairylights                   |4.0.5               |DONE      |Manifest: NOSIGNATURE
+		SpawnerFix-1.16.2-1.0.0.2.jar                     |Spawner Fix                   |sf                            |1.0.0.2             |DONE      |Manifest: NOSIGNATURE
+		darkerdepths-1.16.5-1.1.4.jar                     |Darker Depths                 |darkerdepths                  |1.1.4               |DONE      |Manifest: NOSIGNATURE
+		spark-forge.jar                                   |spark                         |spark                         |1.6.0               |DONE      |Manifest: NOSIGNATURE
+		portality-1.16.5-3.2.5.jar                        |Portality                     |portality                     |3.2.5               |DONE      |Manifest: NOSIGNATURE
+		curios-forge-1.16.5-4.0.5.3.jar                   |Curios API                    |curios                        |1.16.5-4.0.5.3      |DONE      |Manifest: NOSIGNATURE
+		Patchouli-1.16.4-53.2.jar                         |Patchouli                     |patchouli                     |1.16.4-53.2         |DONE      |Manifest: NOSIGNATURE
+		GunpowderLib-1.16.5-1.2.2.jar                     |GunpowderLib                  |gunpowderlib                  |1.16.5-1.2.2        |DONE      |Manifest: 2e:cb:db:61:22:2a:6d:79:f4:22:31:8c:34:9b:cf:9f:91:ea:95:c4:bf:bb:8a:de:6e:10:c3:f0:b1:c6:ae:20
+		Chunk Pregenerator-V1.16-3.2.0.jar                |Chunk Pregenerator            |chunkpregen                   |V1.16-3.2.0         |DONE      |Manifest: NOSIGNATURE
+		Desolation 1.1.0-2 1.16.5.jar                     |Desolation (Forge)            |desolation                    |1.1.0-2             |DONE      |Manifest: NOSIGNATURE
+		constructionwand-1.16.5-2.6.jar                   |Construction Wand             |constructionwand              |1.16.5-2.6          |DONE      |Manifest: NOSIGNATURE
+		LibVulpes-1.16.5-1.0.2-25-universal.jar           |Lib Vulpes                    |libvulpes                     |1.16.5-1.0.2-25     |DONE      |Manifest: NOSIGNATURE
+		ChunkNoGoByeBye-1.16.5-1.3.0.jar                  |ChunkNoGoByeBye               |chunknogobyebye               |1.16.5-1.3.0        |DONE      |Manifest: NOSIGNATURE
+		architectury-1.24.35-forge.jar                    |Architectury                  |architectury                  |1.24.35             |DONE      |Manifest: NOSIGNATURE
+		MoreObservers-1.4.1-MC1.16-Forge.jar              |More Observers                |moreobservers                 |1.0                 |DONE      |Manifest: NOSIGNATURE
+		cc-tweaked-1.16.5-1.99.1.jar                      |CC: Tweaked                   |computercraft                 |1.99.1              |DONE      |Manifest: NOSIGNATURE
+		AI-Improvements-1.16.2-0.3.0.jar                  |AI-Improvements               |aiimprovements                |0.3.0               |DONE      |Manifest: NOSIGNATURE
+		cloth-config-4.12.41-forge.jar                    |Cloth Config v4 API           |cloth-config                  |4.12.41             |DONE      |Manifest: NOSIGNATURE
+		BetterBurning-1.16.5-6.0.6.jar                    |BetterBurning                 |betterburning                 |6.0.6               |DONE      |Manifest: eb:c4:b1:67:8b:f9:0c:db:dc:4f:01:b1:8e:61:64:39:4c:10:85:0b:a6:c4:c7:48:f0:fa:95:f2:cb:08:3a:e5
+		bwncr-1.16.5-3.10.16.jar                          |Bad Wither No Cookie Reloaded |bwncr                         |1.16.5-3.10.16      |DONE      |Manifest: NOSIGNATURE
+		FastLeafDecay-v25.jar                             |FastLeafDecay                 |fastleafdecay                 |v25                 |DONE      |Manifest: NOSIGNATURE
+		exoticbirds-1.16.4-1.3.0.jar                      |Exotic Birds                  |exoticbirds                   |1.3.0               |DONE      |Manifest: NOSIGNATURE
+		CodeChickenLib-1.16.5-4.0.5.438-universal.jar     |CodeChicken Lib               |codechickenlib                |4.0.5.438           |DONE      |Manifest: 31:e6:db:63:47:4a:6e:e0:0a:2c:11:d1:76:db:4e:82:ff:56:2d:29:93:d2:e5:02:bd:d3:bd:9d:27:47:a5:71
+		CBMultipart-1.16.5-3.0.3.122-universal.jar        |CBMultipart                   |cb_multipart                  |3.0.3.122           |DONE      |Manifest: 31:e6:db:63:47:4a:6e:e0:0a:2c:11:d1:76:db:4e:82:ff:56:2d:29:93:d2:e5:02:bd:d3:bd:9d:27:47:a5:71
+		ProjectRed-1.16.5-4.11.0-beta-6-core.jar          |ProjectRed Core               |projectred-core               |4.11.0-beta-6       |DONE      |Manifest: NOSIGNATURE
+		ProjectRed-1.16.5-4.11.0-beta-6-illumination.jar  |ProjectRed Illumination       |projectred-illumination       |4.11.0-beta-6       |DONE      |Manifest: NOSIGNATURE
+		ProjectRed-1.16.5-4.11.0-beta-6-transmission.jar  |ProjectRed Transmission       |projectred-transmission       |4.11.0-beta-6       |DONE      |Manifest: NOSIGNATURE
+		ProjectRed-1.16.5-4.11.0-beta-6-integration.jar   |ProjectRed Integration        |projectred-integration        |4.11.0-beta-6       |DONE      |Manifest: NOSIGNATURE
+		Rubber_Duck-1.16.5-1.2.0.jar                      |Rubber Duck                   |rubber_duck                   |1.2.0               |DONE      |Manifest: NOSIGNATURE
+		BetterAdvancements-1.16.5-0.1.0.108.jar           |Better Advancements           |betteradvancements            |0.1.0.108           |DONE      |Manifest: NOSIGNATURE
+		inventorysorter-1.16.1-18.1.0.jar                 |Simple Inventory Sorter       |inventorysorter               |18.1.0              |DONE      |Manifest: NOSIGNATURE
+		rhino-forge-1605.1.5-build.75.jar                 |Rhino                         |rhino                         |1605.1.5-build.75   |DONE      |Manifest: NOSIGNATURE
+		ftb-library-forge-1605.3.4-build.90.jar           |FTB Library                   |ftblibrary                    |1605.3.4-build.90   |DONE      |Manifest: NOSIGNATURE
+		ftb-teams-forge-1605.2.3-build.40.jar             |FTB Teams                     |ftbteams                      |1605.2.3-build.40   |DONE      |Manifest: NOSIGNATURE
+		Dice-1.16.5-1.2.0.jar                             |Dice                          |dice                          |1.2.0               |DONE      |Manifest: NOSIGNATURE
+		portable_stonecutter-1.16.5-1.3.5.jar             |Portable Stonecutter          |portable_stonecutter          |1.3.5               |DONE      |Manifest: NOSIGNATURE
+		jei-1.16.5-7.7.1.137.jar                          |Just Enough Items             |jei                           |7.7.1.137           |DONE      |Manifest: NOSIGNATURE
+		item-filters-forge-1605.2.5-build.9.jar           |Item Filters                  |itemfilters                   |1605.2.5-build.9    |DONE      |Manifest: NOSIGNATURE
+		metalbarrels-1.16.2-3.3b.jar                      |Metal Barrels                 |metalbarrels                  |1.16.2-3.3b         |DONE      |Manifest: NOSIGNATURE
+		abnormals_core-1.16.5-3.3.0.jar                   |Abnormals Core                |abnormals_core                |3.3.0               |DONE      |Manifest: NOSIGNATURE
+		ponderjs-1.16.5-1.0.3d.jar                        |Ponderjs                      |ponderjs                      |1.16.5-1.0.3d       |DONE      |Manifest: NOSIGNATURE
+		Clumps-6.0.0.27.jar                               |Clumps                        |clumps                        |6.0.0.27            |DONE      |Manifest: NOSIGNATURE
+		shutupexperimentalsettings-1.0.3.jar              |Shutup Experimental Settings! |shutupexperimentalsettings    |1.0.3               |DONE      |Manifest: NOSIGNATURE
+		appliedenergistics2-8.4.4.jar                     |Applied Energistics 2         |appliedenergistics2           |8.4.4               |DONE      |Manifest: 95:58:cc:83:9d:a8:fa:4f:e9:f3:54:90:66:61:c8:ae:9c:08:88:11:52:52:df:2d:28:5f:05:d8:28:57:0f:98
+		NaturesCompass-1.16.5-1.9.1-forge.jar             |Nature's Compass              |naturescompass                |1.16.5-1.9.1-forge  |DONE      |Manifest: NOSIGNATURE
+		configured-1.5.1-1.16.5.jar                       |Configured                    |configured                    |1.5.1               |DONE      |Manifest: NOSIGNATURE
+		decorative_blocks-1.16.4-1.7.2.jar                |Decorative Blocks             |decorative_blocks             |1.7.2               |DONE      |Manifest: NOSIGNATURE
+		decorative_blocks_abnormals-1.2.jar               |Decorative Blocks Abnormals   |decorative_blocks_abnormals   |1.2                 |DONE      |Manifest: NOSIGNATURE
+		DungeonCrawl-1.16.5-2.3.2.jar                     |Dungeon Crawl                 |dungeoncrawl                  |2.3.2               |DONE      |Manifest: NOSIGNATURE
+		catalogue-1.5.0-1.16.5.jar                        |Catalogue                     |catalogue                     |1.5.0               |DONE      |Manifest: NOSIGNATURE
+		iChunUtil-1.16.5-10.5.0.jar                       |iChunUtil                     |ichunutil                     |10.5.0              |DONE      |Manifest: NOSIGNATURE
+		randomium-1.16.5-1.7.jar                          |Randomium                     |randomium                     |1.16.5-1.7          |DONE      |Manifest: NOSIGNATURE
+		EnderStorage-1.16.5-2.8.0.168-universal.jar       |EnderStorage                  |enderstorage                  |2.8.0.168           |DONE      |Manifest: 31:e6:db:63:47:4a:6e:e0:0a:2c:11:d1:76:db:4e:82:ff:56:2d:29:93:d2:e5:02:bd:d3:bd:9d:27:47:a5:71
+		ftb-chunks-forge-1605.3.2-build.83.jar            |FTB Chunks                    |ftbchunks                     |1605.3.2-build.83   |DONE      |Manifest: NOSIGNATURE
+		kubejs-forge-1605.3.19-build.229.jar              |KubeJS                        |kubejs                        |1605.3.19-build.229 |DONE      |Manifest: NOSIGNATURE
+		forge-1.16.5-36.2.20-universal.jar                |Forge                         |forge                         |36.2.20             |DONE      |Manifest: 22:af:21:d8:19:82:7f:93:94:fe:2b:ac:b7:e4:41:57:68:39:87:b1:a7:5c:c6:44:f9:25:74:21:14:f5:0d:90
+		selene-1.16.5-1.9.0.jar                           |Selene                        |selene                        |1.16.5-1.0          |DONE      |Manifest: NOSIGNATURE
+		antiqueatlas-6.0.1-forge-mc1.16.5.jar             |Antique Atlas                 |antiqueatlas                  |6.0.1-forge-mc1.16.5|DONE      |Manifest: NOSIGNATURE
+		CraftingTweaks_1.16.5-12.2.1.jar                  |Crafting Tweaks               |craftingtweaks                |12.2.1              |DONE      |Manifest: NOSIGNATURE
+		forge-1.16.5-36.2.20-server.jar                   |Minecraft                     |minecraft                     |1.16.5              |DONE      |Manifest: NOSIGNATURE
+		cavebiomeapi-1.16.5-1.3.7.jar                     |CaveBiomeAPI                  |cavebiomeapi                  |1.3.7               |DONE      |Manifest: NOSIGNATURE
+		cofh_core-1.16.5-1.4.0.6.jar                      |CoFH Core                     |cofh_core                     |1.4.0.6             |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		thermal_foundation-1.16.5-1.4.1.7.jar             |Thermal Series                |thermal                       |1.4.1.7             |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		thermal_innovation-1.16.5-1.4.1.3.jar             |Thermal Innovation            |thermal_innovation            |1.4.1.3             |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		thermal_expansion-1.16.5-1.4.1.3.jar              |Thermal Expansion             |thermal_expansion             |1.4.1.3             |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		thermal_locomotion-1.16.5-1.4.1.2.jar             |Thermal Locomotion            |thermal_locomotion            |1.4.1.2             |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		kubejs-thermal-1605.1.4-build.3.jar               |KubeJS Thermal                |kubejs_thermal                |1605.1.4-build.3    |DONE      |Manifest: NOSIGNATURE
+		endergetic-1.16.4-3.0.0.jar                       |The Endergetic Expansion      |endergetic                    |3.0.0               |DONE      |Manifest: NOSIGNATURE
+		TConstruct-1.16.5-3.3.0.308.jar                   |Tinkers' Construct            |tconstruct                    |3.3.0.308           |DONE      |Manifest: NOSIGNATURE
+		MouseTweaks-2.14-mc1.16.2.jar                     |Mouse Tweaks                  |mousetweaks                   |2.14                |DONE      |Manifest: NOSIGNATURE
+		titanium-1.16.5-3.2.8.7-22.jar                    |Titanium                      |titanium                      |3.2.8.7             |DONE      |Manifest: NOSIGNATURE
+		ftb-quests-forge-1605.3.5-build.72.jar            |FTB Quests                    |ftbquests                     |1605.3.5-build.72   |DONE      |Manifest: NOSIGNATURE
+		Jade-1.16.4-2.8.0.jar                             |Jade                          |jade                          |2.8.0               |DONE      |Manifest: NOSIGNATURE
+		Exchangers-1.16.5-3.0.2.jar                       |Exchangers                    |exchangers                    |1.16.5-3.0.2        |DONE      |Manifest: 2e:cb:db:61:22:2a:6d:79:f4:22:31:8c:34:9b:cf:9f:91:ea:95:c4:bf:bb:8a:de:6e:10:c3:f0:b1:c6:ae:20
+		archers_paradox-1.16.5-1.4.0.1.jar                |Archer's Paradox              |archers_paradox               |1.4.0.1             |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		nolakes-0.1-1.16.4.jar                            |NoLakes!                      |nolakes                       |0.1-1.16.4          |DONE      |Manifest: NOSIGNATURE
+		paintings-1.16.4-7.0.0.1.jar                      |Paintings ++                  |paintings                     |1.16.4-6.0.1.5      |DONE      |Manifest: NOSIGNATURE
+		pipez-1.16.5-1.2.13.jar                           |Pipez                         |pipez                         |1.16.5-1.2.13       |DONE      |Manifest: NOSIGNATURE
+		flywheel-1.16-0.2.5.jar                           |Flywheel                      |flywheel                      |1.16-0.2.5          |DONE      |Manifest: NOSIGNATURE
+		create-mc1.16.5_v0.3.2g.jar                       |Create                        |create                        |v0.3.2g             |DONE      |Manifest: NOSIGNATURE
+		Mantle-1.16.5-1.6.147.jar                         |Mantle                        |mantle                        |1.6.147             |DONE      |Manifest: NOSIGNATURE
+		cookiecore-1.16.5-3.3.0-12106d2.jar               |CookieCore                    |cookiecore                    |3.3.0               |DONE      |Manifest: NOSIGNATURE
+		magicfeather-1.16.2-3.2.0.jar                     |Magic Feather                 |magicfeather                  |1.16.2-3.2.0        |DONE      |Manifest: NOSIGNATURE
+		ftb-backups-2.1.2.2.jar                           |FTB Backups                   |ftbbackups                    |2.1.2.2             |DONE      |Manifest: NOSIGNATURE
+		FastWorkbench-1.16.4-4.5.1.jar                    |FastWorkbench                 |fastbench                     |4.5.1               |DONE      |Manifest: NOSIGNATURE
+		StorageDrawers-1.16.3-8.3.0.jar                   |Storage Drawers               |storagedrawers                |8.3.0               |DONE      |Manifest: NOSIGNATURE
+		kubejs-create-1605.1.2-build.7.jar                |KubeJS Create                 |kubejs_create                 |1605.1.2-build.7    |DONE      |Manifest: NOSIGNATURE
+		ravencoffee-1.16.5-beta_01.jar                    |Raven Coffee Mod              |ravencoffee                   |1.16.3-0.1          |DONE      |Manifest: NOSIGNATURE
+		appleskin-forge-mc1.16.x-2.2.0.jar                |AppleSkin                     |appleskin                     |mc1.16.4-2.2.0      |DONE      |Manifest: NOSIGNATURE
+		lootr-1.16.5-0.0.9.30.jar                         |Lootr                         |lootr                         |0.0.9.30            |DONE      |Manifest: NOSIGNATURE
+		ferritecore-2.1.0-forge.jar                       |Ferrite Core                  |ferritecore                   |2.1.0               |DONE      |Manifest: 41:ce:50:66:d1:a0:05:ce:a1:0e:02:85:9b:46:64:e0:bf:2e:cf:60:30:9a:fe:0c:27:e0:63:66:9a:84:ce:8a
+		Chisel-MC1.16.5-2.0.1-alpha.4.jar                 |Chisel                        |chisel                        |MC1.16.5-2.0.1-alpha|DONE      |Manifest: NOSIGNATURE
+		occultism-1.16.5-1.20.1.jar                       |Occultism                     |occultism                     |1.16.5-1.20.1       |DONE      |Manifest: NOSIGNATURE
+		BackTools-1.16.5-10.1.0.jar                       |Back Tools                    |backtools                     |10.1.0              |DONE      |Manifest: NOSIGNATURE
+		Aquaculture-1.16.5-2.1.21.jar                     |Aquaculture 2                 |aquaculture                   |1.16.5-2.1.21       |DONE      |Manifest: NOSIGNATURE
+		orcinusscaves-1.3.jar                             |Orcinus's Cavern              |cavern                        |{1.2.0}             |DONE      |Manifest: NOSIGNATURE
+		xkdeco_0.2.4.jar                                  |XK's Deco                     |xkdeco                        |0.2.4               |DONE      |Manifest: NOSIGNATURE
+		CosmeticArmorReworked-1.16.5-v4a.jar              |CosmeticArmorReworked         |cosmeticarmorreworked         |1.16.5-v4a          |DONE      |Manifest: 5e:ed:25:99:e4:44:14:c0:dd:89:c1:a9:4c:10:b5:0d:e4:b1:52:50:45:82:13:d8:d0:32:89:67:56:57:01:53
+		valhelsia_core-16.0.13a.jar                       |Valhelsia Core                |valhelsia_core                |16.0.13a            |DONE      |Manifest: NOSIGNATURE
+		forbidden_arcanus-16.2.2.jar                      |Forbidden & Arcanus           |forbidden_arcanus             |16.2.2              |DONE      |Manifest: NOSIGNATURE
+		SoundFilters-0.14_for_1.16.2.jar                  |Sound Filters                 |soundfilters                  |0.14_for_1.16.2     |DONE      |Manifest: NOSIGNATURE
+		chiselsandbits-1.0.43.jar                         |Chisels & bits                |chiselsandbits                |1.0.43              |DONE      |Manifest: NOSIGNATURE
+		OpenLoader-1.16.5-9.0.3.jar                       |OpenLoader                    |openloader                    |9.0.3               |DONE      |Manifest: eb:c4:b1:67:8b:f9:0c:db:dc:4f:01:b1:8e:61:64:39:4c:10:85:0b:a6:c4:c7:48:f0:fa:95:f2:cb:08:3a:e5
+		drinkbeer-1.16.5-2.3.5.jar                        |Drink Beer                    |drinkbeer                     |2.3.5               |DONE      |Manifest: NOSIGNATURE
+		DefaultOptions_1.16.5-12.2.1.jar                  |Default Options               |defaultoptions                |12.2.1              |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: dc47d6ff-6417-44f4-bc22-3b37ce182d31
+	Player Count: 1 / 20; [ServerPlayerEntity['TTRanger'/44868, l='ServerLevel[world]', x=82.16, y=67.00, z=-48.90]]
+	Data Packs: vanilla, mod:enchantedbookredesign (incompatible), mod:grapplemod, mod:architects_palette (incompatible), mod:connectivity, mod:strawgolem, mod:ctm (incompatible), mod:controlling, mod:structurescompass, mod:placebo (incompatible), mod:mightyarchitect (incompatible), mod:moreminecarts, mod:culinaryconstruct (incompatible), mod:improvedbackpacks, mod:xreliquary, mod:morpheus (incompatible), mod:worldshape, mod:waterstrainer, mod:supplementaries, mod:cobblegenrandomizer, mod:buddycards, mod:pathtodirt (incompatible), mod:prettypipes (incompatible), mod:corpse, mod:oretweaker, mod:farmersdelight, mod:torchmaster (incompatible), mod:repurposed_structures, mod:crashutilities (incompatible), mod:fastfurnaceminusreplacement (incompatible), mod:biomesoplenty, mod:advancedrocketry, mod:extcaves, mod:fairylights, mod:sf, mod:darkerdepths, mod:spark, mod:portality (incompatible), mod:curios, mod:patchouli (incompatible), mod:gunpowderlib, mod:chunkpregen, mod:desolation, mod:constructionwand, mod:libvulpes, mod:chunknogobyebye (incompatible), mod:architectury, mod:moreobservers, mod:computercraft, mod:aiimprovements, mod:cloth-config (incompatible), mod:betterburning, mod:bwncr, mod:fastleafdecay (incompatible), mod:exoticbirds, mod:codechickenlib (incompatible), mod:cb_multipart (incompatible), mod:projectred-core (incompatible), mod:projectred-illumination (incompatible), mod:projectred-transmission (incompatible), mod:projectred-integration (incompatible), mod:rubber_duck, mod:betteradvancements, mod:inventorysorter (incompatible), mod:rhino, mod:ftblibrary, mod:ftbteams, mod:dice, mod:portable_stonecutter, mod:jei, mod:itemfilters, mod:metalbarrels (incompatible), mod:abnormals_core, mod:ponderjs, mod:clumps, mod:shutupexperimentalsettings (incompatible), mod:appliedenergistics2 (incompatible), mod:naturescompass (incompatible), mod:configured, mod:decorative_blocks, mod:decorative_blocks_abnormals, mod:dungeoncrawl, mod:catalogue, mod:ichunutil, mod:randomium, mod:enderstorage (incompatible), mod:ftbchunks, mod:kubejs, mod:forge, mod:selene, mod:antiqueatlas, mod:craftingtweaks (incompatible), mod:cavebiomeapi, mod:cofh_core (incompatible), mod:thermal (incompatible), mod:thermal_innovation (incompatible), mod:thermal_expansion (incompatible), mod:thermal_locomotion (incompatible), mod:kubejs_thermal, mod:endergetic, mod:tconstruct, mod:mousetweaks, mod:titanium (incompatible), mod:ftbquests, mod:jade, mod:exchangers, mod:archers_paradox (incompatible), mod:nolakes (incompatible), mod:paintings (incompatible), mod:pipez, mod:flywheel, mod:create, mod:mantle (incompatible), mod:cookiecore, mod:magicfeather, mod:ftbbackups (incompatible), mod:fastbench (incompatible), mod:storagedrawers (incompatible), mod:kubejs_create, mod:ravencoffee, mod:appleskin, mod:lootr (incompatible), mod:ferritecore (incompatible), mod:chisel (incompatible), mod:occultism, mod:backtools, mod:aquaculture (incompatible), mod:cavern, mod:xkdeco, mod:cosmeticarmorreworked (incompatible), mod:valhelsia_core, mod:forbidden_arcanus (incompatible), mod:soundfilters (incompatible), mod:chiselsandbits (incompatible), mod:openloader, mod:drinkbeer, mod:defaultoptions (incompatible), openloader/data/generated_datapack.zip
+	Is Modded: Definitely; Server brand changed to 'forge'
+	Type: Dedicated Server (map_server.txt)
